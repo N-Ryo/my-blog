@@ -3,7 +3,8 @@ before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
   # 記事一覧用
-  @posts = Post.all
+  @q = Post.order(created_at: :desc).ransack(params[:q])
+  @posts = @q.result(distinct: true)
   # 最新記事用
   @new_posts = Post.order(created_at: :desc).limit(5)
   @author = Author.first
