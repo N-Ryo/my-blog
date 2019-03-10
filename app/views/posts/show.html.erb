@@ -6,7 +6,7 @@
     <hr>
     <%= simple_format(@post.body) %>
     <hr>
-    <%= link_to "編集", edit_post_path(@post), class: "btn btn-secondary" %>
-    <%= link_to "削除", post_path(@post), class: "btn btn-danger", method: :delete %>
+    <%= link_to "編集", edit_post_path, class: "btn btn-secondary" %>
+    <%= link_to "削除", post_path, class: "btn btn-danger", method: :delete %>
   </div>
 </div>
